@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 
-function Box(props) {
+const Box = props => {
   // This reference will give us direct access to the mesh
   const ref = useRef()
   // Set up state for the hovered and active state
@@ -25,7 +25,7 @@ function Box(props) {
   )
 }
 
-export default function App() {
+const App = () => {
   return (
     <Canvas>
       <ambientLight intensity={0.5} />
@@ -37,3 +37,4 @@ export default function App() {
   )
 }
 
+export default App;
