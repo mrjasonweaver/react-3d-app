@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 
-export const Box = props => {
+export const Box = ({currentColor}) => {
   // This reference will give us direct access to the mesh
   const ref = useRef()
   // Rotate mesh every frame, this is outside of React without overhead
@@ -10,10 +10,9 @@ export const Box = props => {
   })
   return (
     <mesh
-      {...props}
       ref={ref}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color='orange' />
+      <meshStandardMaterial color={currentColor} />
     </mesh>
   )
 }
