@@ -5,13 +5,13 @@ export const Menu = ({handleColorChange}) => {
     <nav>
       <ul>
         <li>
-          <a href="/red" onClick={event => handleColorChange(event, 'red')}>Red</a>
+          <a href="/red" onClick={event => handleColorChange(event, 'crimson')}>Red</a>
         </li>
         <li>
-          <a href="/green" onClick={event => handleColorChange(event, 'green')}>Green</a>
+          <a href="/green" onClick={event => handleColorChange(event, 'teal')}>Green</a>
         </li>
         <li>
-          <a href="/blue" onClick={event => handleColorChange(event, 'blue')}>Blue</a>
+          <a href="/blue" onClick={event => handleColorChange(event, 'steelblue')}>Blue</a>
         </li>
       </ul>
     </nav>
