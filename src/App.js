@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Stage } from '@react-three/drei'
+import { Stage, OrbitControls } from '@react-three/drei'
 import { Menu } from './components/Menu';
 import { Submarine } from './components/Submarine';
 import * as THREE from 'three';
@@ -36,6 +36,7 @@ const App = () => {
             <Submarine currentColor={currentColor} />
           </Stage>
         </Suspense>
+        <OrbitControls autoRotate enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2.8} maxPolarAngle={Math.PI / 2.8} />
       </Canvas>
     </div>
   )
