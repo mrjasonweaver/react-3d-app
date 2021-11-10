@@ -1,25 +1,40 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Stage } from '@react-three/drei'
 import { Menu } from './components/Menu';
 import { Submarine } from './components/Submarine';
+import * as THREE from 'three';
 
 const App = () => {
-  const [currentColor, setCurrentColor] = useState('orange');
+  const orange = new THREE.Color(0xffa500);
+  const crimson = new THREE.Color(0xdc143c);
+  const teal = new THREE.Color(0x008080);
+  const steelblue = new THREE.Color(0x4682b4);
+
+  const [currentColor, setCurrentColor] = useState(orange);
 
   const handleColorChange = (event, color) => {
     event.preventDefault();
-    setCurrentColor(color);
+    if (color === 'crimson') {
+      setCurrentColor(crimson);
+    } else if (color === 'teal') {
+      setCurrentColor(teal);
+    } else if (color === 'steelblue') {
+      setCurrentColor(steelblue);
+    } else {
+      setCurrentColor(orange);
+    }
   };
 
   return (
     <div>
       <Menu handleColorChange={handleColorChange} />
-      <Canvas>
+      <Canvas dpr={[1, 2]} camera={{ fov: 45 }}>
+        <color attach="background" args={['midnightBlue']} />
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <pointLight position={[-10, -10, -10]} />
-          <Submarine />
+          <Stage environment={null} intensity={1} contactShadowOpacity={0.5} shadowBias={-0.0015}>
+            <Submarine currentColor={currentColor} />
+          </Stage>
         </Suspense>
       </Canvas>
     </div>

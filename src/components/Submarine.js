@@ -1,11 +1,18 @@
-import { useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import React, { useLayoutEffect }from 'react';
+import { useGLTF } from '@react-three/drei';
+import * as THREE from 'three';
 
-export const Submarine = () => {
-  const gltf = useLoader(GLTFLoader, './models/submarine.gltf')
-  return (
-    <>
-      <primitive object={gltf.scene} scale={0.4} />
-    </>
-  );
+export const Submarine = ({currentColor}) => {
+  const { scene, nodes, materials } = useGLTF('./models/submarine.gltf');
+
+  useLayoutEffect(() => {
+    Object.assign(materials.Material, { 
+      roughness: 0, 
+      metalness: 0.25,
+      emissive: new THREE.Color(0x000000),
+      color: currentColor,
+      envMapIntensity: 0.5 })
+  }, [scene, nodes, materials, currentColor]);
+
+  return <primitive object={scene} />
 };
