@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Stage, OrbitControls } from '@react-three/drei'
+import { Environment, Stage, OrbitControls } from '@react-three/drei'
 import { Menu } from './components/Menu';
 import { Submarine } from './components/Submarine';
 import * as THREE from 'three';
@@ -33,6 +33,12 @@ const App = () => {
         <color attach="background" args={['midnightBlue']} />
         <Suspense fallback={null}>
           <Stage environment={null} intensity={1} contactShadowOpacity={0.5} shadowBias={-0.0015}>
+          <Environment
+              background={true} // Whether to affect scene.background
+              path={'/'} // Path to the above file(s)
+              preset={'night'} // Preset string (overrides files and path)
+              scene={undefined} // adds the ability to pass a custom THREE.Scene
+            />
             <Submarine currentColor={currentColor} />
           </Stage>
         </Suspense>
