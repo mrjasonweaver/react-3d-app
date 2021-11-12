@@ -29,20 +29,18 @@ const App = () => {
   return (
     <div>
       <Menu handleColorChange={handleColorChange} />
-      <Canvas dpr={[1, 2]} camera={{ fov: 45 }}>
-        <color attach="background" args={['midnightBlue']} />
+      <Canvas dpr={[1, 2]} camera={{ fov: 75 }}>
         <Suspense fallback={null}>
-          <Stage environment={null} intensity={1} contactShadowOpacity={0.5} shadowBias={-0.0015}>
+          <Stage environment={null} intensity={1} contactShadowOpacity={0.1} shadowBias={-0.0015}>
           <Environment
               background={true} // Whether to affect scene.background
-              path={'/'} // Path to the above file(s)
-              preset={'night'} // Preset string (overrides files and path)
-              scene={undefined} // adds the ability to pass a custom THREE.Scene
+              files={'UW_1.hdr'}
+              path={'/'}
             />
             <Submarine currentColor={currentColor} />
           </Stage>
         </Suspense>
-        <OrbitControls autoRotate enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2.8} maxPolarAngle={Math.PI / 2.8} />
+        <OrbitControls autoRotate enableZoom={true} enablePan={false} />
       </Canvas>
     </div>
   )
