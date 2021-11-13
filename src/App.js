@@ -1,9 +1,10 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, Stage, OrbitControls } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import { Menu } from './components/Menu';
-import { Submarine } from './components/Submarine';
+import { Scene } from './components/Scene';
 import * as THREE from 'three';
+
 
 const App = () => {
   const orange = new THREE.Color(0xffa500);
@@ -31,14 +32,7 @@ const App = () => {
       <Menu handleColorChange={handleColorChange} />
       <Canvas dpr={[1, 2]} camera={{ fov: 75 }}>
         <Suspense fallback={null}>
-          <Stage environment={null} intensity={1} contactShadowOpacity={0.1} shadowBias={-0.0015}>
-          <Environment
-              background={true} // Whether to affect scene.background
-              files={'UW_1.hdr'}
-              path={'/'}
-            />
-            <Submarine currentColor={currentColor} />
-          </Stage>
+          <Scene currentColor={currentColor} />
         </Suspense>
         <OrbitControls autoRotate enableZoom={true} enablePan={false} />
       </Canvas>
