@@ -11,11 +11,11 @@ const App = () => {
   const steelblue = new THREE.Color(0x4682b4);
 
   const smooth = [
-      './textures/Metal030_1K_Color.jpg',
-      './textures/Metal030_1K_NormalGL.jpg',
-      './textures/Metal030_1K_Roughness.jpg',
-      './textures/Metal030_1K_Metalness.jpg',
-    ]
+    './textures/Metal030_1K_Color.jpg',
+    './textures/Metal030_1K_NormalGL.jpg',
+    './textures/Metal030_1K_Roughness.jpg',
+    './textures/Metal030_1K_Metalness.jpg',
+  ];
   
   const rough = [
     './textures/Metal040_1K_Color.jpg',
@@ -31,9 +31,14 @@ const App = () => {
     './textures/Metal021_1K_Metalness.jpg',
   ];
 
+  /** State */
   const [currentTexture, setCurrentTexture] = useState(smooth);
   const [currentColor, setCurrentColor] = useState(teal);
 
+  /** 
+   * @param {MouseEvent} event
+   * @param {string} color - The color to change for the submarine
+   */
   const handleColorChange = (event, color) => {
     event.preventDefault();
     if (color === 'crimson') {
@@ -44,7 +49,10 @@ const App = () => {
       setCurrentColor(steelblue);
     }
   };
-
+  /** 
+   * @param {MouseEvent} event
+   * @param {string} texture - The texture to load for the submarine
+   */
   const handleTextureChange = (event, texture) => {
     event.preventDefault();
     if (texture === 'smooth') {

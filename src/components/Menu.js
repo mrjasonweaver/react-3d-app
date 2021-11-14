@@ -16,7 +16,7 @@ export const Menu = ({handleColorChange, handleTextureChange}) => {
       </ul>
       <ul>
         <li>
-          <a href="/metal1" onClick={event => handleTextureChange(event, 'smooth')}>smooth</a>
+          <a href="/smooth" onClick={event => handleTextureChange(event, 'smooth')}>smooth</a>
         </li>
         <li>
           <a href="/aged" onClick={event => handleTextureChange(event, 'rough')}>rough</a>
