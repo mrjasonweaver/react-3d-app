@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Menu = ({handleColorChange}) => {
+export const Menu = ({handleColorChange, handleTextureChange}) => {
   return (
     <nav>
       <ul>
@@ -12,6 +12,17 @@ export const Menu = ({handleColorChange}) => {
         </li>
         <li>
           <a href="/blue" onClick={event => handleColorChange(event, 'steelblue')}>Blue</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/metal1" onClick={event => handleTextureChange(event, 'smooth')}>smooth</a>
+        </li>
+        <li>
+          <a href="/aged" onClick={event => handleTextureChange(event, 'rough')}>rough</a>
+        </li>
+        <li>
+          <a href="/beatup" onClick={event => handleTextureChange(event, 'beatup')}>beatup</a>
         </li>
       </ul>
     </nav>

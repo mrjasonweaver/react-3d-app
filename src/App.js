@@ -5,14 +5,34 @@ import { Menu } from './components/Menu';
 import { Scene } from './components/Scene';
 import * as THREE from 'three';
 
-
 const App = () => {
-  const orange = new THREE.Color(0xffa500);
   const crimson = new THREE.Color(0xdc143c);
   const teal = new THREE.Color(0x008080);
   const steelblue = new THREE.Color(0x4682b4);
 
-  const [currentColor, setCurrentColor] = useState(orange);
+  const smooth = [
+      './textures/Metal030_1K_Color.jpg',
+      './textures/Metal030_1K_NormalGL.jpg',
+      './textures/Metal030_1K_Roughness.jpg',
+      './textures/Metal030_1K_Metalness.jpg',
+    ]
+  
+  const rough = [
+    './textures/Metal040_1K_Color.jpg',
+    './textures/Metal040_1K_NormalGL.jpg',
+    './textures/Metal040_1K_Roughness.jpg',
+    './textures/Metal040_1K_Metalness.jpg',
+  ];
+
+  const beatup = [
+    './textures/Metal021_1K_Color.jpg',
+    './textures/Metal021_1K_NormalGL.jpg',
+    './textures/Metal021_1K_Roughness.jpg',
+    './textures/Metal021_1K_Metalness.jpg',
+  ];
+
+  const [currentTexture, setCurrentTexture] = useState(smooth);
+  const [currentColor, setCurrentColor] = useState(teal);
 
   const handleColorChange = (event, color) => {
     event.preventDefault();
@@ -22,19 +42,31 @@ const App = () => {
       setCurrentColor(teal);
     } else if (color === 'steelblue') {
       setCurrentColor(steelblue);
-    } else {
-      setCurrentColor(orange);
+    }
+  };
+
+  const handleTextureChange = (event, texture) => {
+    event.preventDefault();
+    if (texture === 'smooth') {
+      setCurrentTexture(smooth);
+    } else if (texture === 'rough') {
+      setCurrentTexture(rough);
+    } else if (texture === 'beatup') {
+      setCurrentTexture(beatup);
     }
   };
 
   return (
     <div>
-      <Menu handleColorChange={handleColorChange} />
-      <Canvas dpr={[1, 2]} camera={{ fov: 75 }}>
+      <Menu 
+        handleColorChange={handleColorChange} 
+        handleTextureChange={handleTextureChange} />
+      <Canvas dpr={[1, 2]} camera={{ fov: 50 }}>
+        <color attach="background" args={['#253B56']} />
         <Suspense fallback={null}>
-          <Scene currentColor={currentColor} />
+          <Scene currentTexture={currentTexture} currentColor={currentColor} />
         </Suspense>
-        <OrbitControls autoRotate enableZoom={true} enablePan={false} />
+        <OrbitControls autoRotate enableZoom={true} enablePan={true} />
       </Canvas>
     </div>
   )

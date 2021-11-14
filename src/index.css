@@ -20,28 +20,40 @@ nav {
   position: absolute;
   z-index: 2;
   bottom: 0;
-  width: 240px;
+  width: 180px;
   background-color: #f5f5f5;
-  left: calc(50% - 120px);
+  left: calc(50% - 90px);
+  padding-bottom: 5px;
 }
 nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  gap: 20px;
-  padding: 10px 20px;
+  gap: 5px;
+  padding: 5px 7.5px 0px;
   margin: 0;
 }
 nav ul li a {
   font-size: 0px;
   width: 50px;
   height: 50px;
-  background-color: crimson;
   display: block;
+}
+nav ul:first-of-type li:first-of-type a {
+  background-color: crimson;
 }
 nav ul li:nth-of-type(2) a {
   background-color: teal;
 }
 nav ul li:nth-of-type(3) a {
   background-color: steelblue;
+}
+nav ul:nth-of-type(2) li:first-of-type a {
+  background: url('images/smooth.png');
+}
+nav ul:nth-of-type(2) li:nth-of-type(2) a {
+  background: url('images/rough.png');
+}
+nav ul:nth-of-type(2) li:nth-of-type(3) a {
+  background: url('images/beatup.png');
 }

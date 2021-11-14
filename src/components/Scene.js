@@ -1,19 +1,12 @@
-import { Environment, Stage } from '@react-three/drei'
-import { useLoader } from '@react-three/fiber';
+import { Environment, Stage, useTexture } from '@react-three/drei'
 import { Submarine } from '../components/Submarine';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
-export const Scene = ({currentColor}) => {
-  const [colorMap, normalMap, roughnessMap, metalnessMap] = useLoader(TextureLoader, [
-    './textures/Metal030_1K_Color.jpg',
-    './textures/Metal030_1K_NormalGL.jpg',
-    './textures/Metal030_1K_Roughness.jpg',
-    './textures/Metal030_1K_Metalness.jpg',
-  ])
+export const Scene = ({currentColor, currentTexture}) => {
+  const [colorMap, normalMap, roughnessMap, metalnessMap] = useTexture(currentTexture);
   return (
-    <Stage intensity={1} contactShadowOpacity={0} >
+    <Stage intensity={1} >
       <Environment
-          background={true}
+          background={false}
           files={'UW_1.hdr'}
           path={'/'}
         />
@@ -23,7 +16,8 @@ export const Scene = ({currentColor}) => {
           normalMap={normalMap}
           roughnessMap={roughnessMap}
           metalnessMap={metalnessMap} 
-          currentColor={currentColor} />
+          currentColor={currentColor}
+          currentTexture={currentTexture} />
       </mesh>
     </Stage>
   )
