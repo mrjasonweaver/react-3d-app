@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
 import { Menu } from './components/Menu';
 import { Scene } from './components/Scene';
+import { Keyboard } from './components/Keyboard';
 import * as THREE from 'three';
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
   /** State */
   const [currentTexture, setCurrentTexture] = useState(smooth);
   const [currentColor, setCurrentColor] = useState(teal);
+  const [upKeyPressed, setUpKeyPressed] = useState(false);
 
   /** 
    * @param {MouseEvent} event
@@ -72,10 +74,14 @@ const App = () => {
       <Canvas dpr={[1, 2]} camera={{ fov: 50 }}>
         <color attach="background" args={['#253B56']} />
         <Suspense fallback={null}>
-          <Scene currentTexture={currentTexture} currentColor={currentColor} />
+          <Scene 
+            currentTexture={currentTexture} 
+            currentColor={currentColor} 
+            upKeyPressed={upKeyPressed} />
         </Suspense>
-        <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+        <OrbitControls enableZoom={true} enablePan={true} />
       </Canvas>
+      <Keyboard setUpKeyPressed={setUpKeyPressed} />
     </div>
   )
 }

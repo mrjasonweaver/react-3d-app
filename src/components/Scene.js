@@ -4,14 +4,17 @@ import { Environment, Stage, useTexture } from '@react-three/drei'
 import { Submarine } from '../components/Submarine';
 import { Propeller } from '../components/Propeller';
 
-export const Scene = ({currentColor, currentTexture}) => {
+export const Scene = ({currentColor, currentTexture, upKeyPressed}) => {
   const [colorMap, normalMap, roughnessMap, metalnessMap] = useTexture(currentTexture);
   const propellerMesh = useRef();
+
   useFrame(({ clock }) => {
-    propellerMesh.current.rotation.z = clock.getElapsedTime();
+    if (upKeyPressed) {
+      propellerMesh.current.rotation.z = clock.getElapsedTime() * 3;
+    }
   })
   return (
-    <Stage intensity={1} >
+    <Stage intensity={1}>
       <Environment
           background={false}
           files={'UW_1.hdr'}
