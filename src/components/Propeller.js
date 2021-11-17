@@ -1,8 +1,8 @@
 import React, { useLayoutEffect }from 'react';
 import { useGLTF } from '@react-three/drei';
 
-export const Submarine = ({currentColor, currentTexture, colorMap, normalMap, roughnessMap, metalnessMap}) => {
-  const { scene, nodes, materials } = useGLTF('./models/submarine-without-propeller.gltf');
+export const Propeller = ({currentColor, currentTexture, colorMap, normalMap, roughnessMap, metalnessMap}) => {
+  const { scene, nodes, materials } = useGLTF('./models/propeller.gltf');
 
   useLayoutEffect(() => {
     Object.assign(materials.Material, { 
