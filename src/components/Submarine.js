@@ -1,4 +1,4 @@
-import React, { useLayoutEffect }from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 export const Submarine = ({currentColor, currentTexture, colorMap, normalMap, roughnessMap, metalnessMap}) => {

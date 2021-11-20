@@ -3,8 +3,9 @@ import { useFrame } from '@react-three/fiber';
 import { Environment, Stage, useTexture } from '@react-three/drei'
 import { Submarine } from '../components/Submarine';
 import { Propeller } from '../components/Propeller';
+import { OceanFloor } from '../components/OceanFloor';
 
-export const Scene = ({currentColor, currentTexture, upKeyPressed}) => {
+export const Scene = ({currentColor, currentTexture, upKeyPressed, sand}) => {
   const [colorMap, normalMap, roughnessMap, metalnessMap] = useTexture(currentTexture);
   const propellerMesh = useRef();
 
@@ -38,6 +39,7 @@ export const Scene = ({currentColor, currentTexture, upKeyPressed}) => {
           currentColor={currentColor}
           currentTexture={currentTexture} />
       </mesh>
+      <OceanFloor sand={sand} />
     </Stage>
   )
 }

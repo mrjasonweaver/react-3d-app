@@ -2,8 +2,8 @@ import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
 import { Menu } from './components/Menu';
-import { Scene } from './components/Scene';
 import { Keyboard } from './components/Keyboard';
+import { Scene } from './components/Scene';
 import * as THREE from 'three';
 
 const App = () => {
@@ -30,6 +30,13 @@ const App = () => {
     './textures/Metal021_1K_NormalGL.jpg',
     './textures/Metal021_1K_Roughness.jpg',
     './textures/Metal021_1K_Metalness.jpg',
+  ];
+  const sand = [
+    './textures/Ground027_1K_Color.jpg',
+    './textures/Ground027_1K_AmbientOcclusion.jpg',
+    './textures/Ground027_1K_NormalGL.jpg',
+    './textures/Ground027_1K_Roughness.jpg',
+    './textures/Ground027_1K_Displacement.jpg',
   ];
 
   /** State */
@@ -77,9 +84,10 @@ const App = () => {
           <Scene 
             currentTexture={currentTexture} 
             currentColor={currentColor} 
-            upKeyPressed={upKeyPressed} />
+            upKeyPressed={upKeyPressed}
+            sand={sand} />
         </Suspense>
-        <OrbitControls enableZoom={true} enablePan={true} />
+        <OrbitControls enableZoom={true} enablePan={false} />
       </Canvas>
       <Keyboard setUpKeyPressed={setUpKeyPressed} />
     </div>
