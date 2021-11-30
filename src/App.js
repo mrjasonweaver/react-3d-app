@@ -79,7 +79,7 @@ const App = () => {
             currentColor={currentColor} 
             upKeyPressed={upKeyPressed} />
         </Suspense>
-        <OrbitControls enableZoom={true} enablePan={true} />
+        <OrbitControls autoRotate enableZoom={true} enablePan={true} />
       </Canvas>
       <Keyboard setUpKeyPressed={setUpKeyPressed} />
     </div>
