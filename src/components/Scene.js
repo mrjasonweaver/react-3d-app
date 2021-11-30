@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Environment, Stage, useTexture } from '@react-three/drei'
+import { Stage, useTexture } from '@react-three/drei'
 import { Submarine } from '../components/Submarine';
 import { Propeller } from '../components/Propeller';
 
@@ -15,11 +15,6 @@ export const Scene = ({currentColor, currentTexture, upKeyPressed}) => {
   })
   return (
     <Stage intensity={1}>
-      <Environment
-          background={false}
-          files={'UW_1.hdr'}
-          path={'/'}
-        />
       <mesh>
         <Submarine 
           map={colorMap}
