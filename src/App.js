@@ -5,6 +5,7 @@ import { Menu } from './components/Menu';
 import { Scene } from './components/Scene';
 import { Keyboard } from './components/Keyboard';
 import * as THREE from 'three';
+import textures from './textures';
 
 const App = () => {
   const crimson = new THREE.Color(0xdc143c);
@@ -12,29 +13,29 @@ const App = () => {
   const steelblue = new THREE.Color(0x4682b4);
 
   const smooth = [
-    './textures/Metal030_1K_Color.jpg',
-    './textures/Metal030_1K_NormalGL.jpg',
-    './textures/Metal030_1K_Roughness.jpg',
-    './textures/Metal030_1K_Metalness.jpg',
+    textures.smoothTexture1,
+    textures.smoothTexture2,
+    textures.smoothTexture3,
+    textures.smoothTexture4
   ];
   
   const rough = [
-    './textures/Metal040_1K_Color.jpg',
-    './textures/Metal040_1K_NormalGL.jpg',
-    './textures/Metal040_1K_Roughness.jpg',
-    './textures/Metal040_1K_Metalness.jpg',
+    textures.roughTexture1,
+    textures.roughTexture2,
+    textures.roughTexture3,
+    textures.roughTexture4
   ];
 
   const beatup = [
-    './textures/Metal021_1K_Color.jpg',
-    './textures/Metal021_1K_NormalGL.jpg',
-    './textures/Metal021_1K_Roughness.jpg',
-    './textures/Metal021_1K_Metalness.jpg',
+    textures.beatupTexture1,
+    textures.beatupTexture2,
+    textures.beatupTexture3,
+    textures.beatupTexture4
   ];
 
   /** State */
-  const [currentTexture, setCurrentTexture] = useState(smooth);
-  const [currentColor, setCurrentColor] = useState(teal);
+  const [currentTexture, setCurrentTexture] = useState(rough);
+  const [currentColor, setCurrentColor] = useState(steelblue);
   const [upKeyPressed, setUpKeyPressed] = useState(false);
 
   /** 
@@ -68,6 +69,7 @@ const App = () => {
 
   return (
     <div>
+
       <Menu 
         handleColorChange={handleColorChange} 
         handleTextureChange={handleTextureChange} />
