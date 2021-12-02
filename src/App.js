@@ -12,6 +12,14 @@ const App = () => {
   const teal = new THREE.Color(0x008080);
   const steelblue = new THREE.Color(0x4682b4);
 
+  const loadImages = async files => {
+    files.forEach(async file => {
+      const img = new Image();
+      img.src = file;
+      await img.decode();
+    });
+  };
+
   const smooth = [
     textures.smoothTexture1,
     textures.smoothTexture2,
@@ -33,8 +41,10 @@ const App = () => {
     textures.beatupTexture4
   ];
 
+  loadImages([...rough, ...beatup]);
+
   /** State */
-  const [currentTexture, setCurrentTexture] = useState(rough);
+  const [currentTexture, setCurrentTexture] = useState(smooth);
   const [currentColor, setCurrentColor] = useState(steelblue);
   const [upKeyPressed, setUpKeyPressed] = useState(false);
 
@@ -69,7 +79,6 @@ const App = () => {
 
   return (
     <div>
-
       <Menu 
         handleColorChange={handleColorChange} 
         handleTextureChange={handleTextureChange} />
