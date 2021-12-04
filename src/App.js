@@ -5,43 +5,12 @@ import { Menu } from './components/Menu';
 import { Scene } from './components/Scene';
 import { Keyboard } from './components/Keyboard';
 import * as THREE from 'three';
-import textures from './textures';
+import { smooth, rough, beatup } from './textures';
 
 const App = () => {
   const crimson = new THREE.Color(0xdc143c);
   const teal = new THREE.Color(0x008080);
   const steelblue = new THREE.Color(0x4682b4);
-
-  const loadImages = async files => {
-    files.forEach(async file => {
-      const img = new Image();
-      img.src = file;
-      await img.decode();
-    });
-  };
-
-  const smooth = [
-    textures.smoothTexture1,
-    textures.smoothTexture2,
-    textures.smoothTexture3,
-    textures.smoothTexture4
-  ];
-  
-  const rough = [
-    textures.roughTexture1,
-    textures.roughTexture2,
-    textures.roughTexture3,
-    textures.roughTexture4
-  ];
-
-  const beatup = [
-    textures.beatupTexture1,
-    textures.beatupTexture2,
-    textures.beatupTexture3,
-    textures.beatupTexture4
-  ];
-
-  loadImages([...rough, ...beatup]);
 
   /** State */
   const [currentTexture, setCurrentTexture] = useState(smooth);

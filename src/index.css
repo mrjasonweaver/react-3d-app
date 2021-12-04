@@ -21,9 +21,10 @@ nav {
   z-index: 2;
   bottom: 0;
   width: 180px;
-  background-color: #f5f5f5;
+  background-color: rgba(0,0,0, 0.3);
   left: calc(50% - 90px);
   padding-bottom: 5px;
+  border-radius: 10px 10px 0 0;
 }
 nav ul {
   display: flex;
@@ -34,26 +35,7 @@ nav ul {
   margin: 0;
 }
 nav ul li a {
-  font-size: 0px;
   width: 50px;
   height: 50px;
   display: block;
-}
-nav ul:first-of-type li:first-of-type a {
-  background-color: crimson;
-}
-nav ul li:nth-of-type(2) a {
-  background-color: teal;
-}
-nav ul li:nth-of-type(3) a {
-  background-color: steelblue;
-}
-nav ul:nth-of-type(2) li:first-of-type a {
-  background: url('images/smooth.png');
-}
-nav ul:nth-of-type(2) li:nth-of-type(2) a {
-  background: url('images/rough.png');
-}
-nav ul:nth-of-type(2) li:nth-of-type(3) a {
-  background: url('images/beatup.png');
 }

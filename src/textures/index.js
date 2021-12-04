@@ -13,10 +13,23 @@ import beatupTexture2 from './Metal021_1K_NormalGL.jpg';
 import beatupTexture3 from './Metal021_1K_Roughness.jpg';
 import beatupTexture4 from './Metal021_1K_Metalness.jpg';
 
+export const smooth = [
+  smoothTexture1,
+  smoothTexture2,
+  smoothTexture3,
+  smoothTexture4
+];
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
-  smoothTexture1, smoothTexture2, smoothTexture3, smoothTexture4,
-  roughTexture1, roughTexture2, roughTexture3, roughTexture4,
-  beatupTexture1, beatupTexture2, beatupTexture3, beatupTexture4
-}
+export const rough = [
+  roughTexture1,
+  roughTexture2,
+  roughTexture3,
+  roughTexture4
+];
+
+export const beatup = [
+  beatupTexture1,
+  beatupTexture2,
+  beatupTexture3,
+  beatupTexture4
+];
