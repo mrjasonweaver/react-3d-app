@@ -14,7 +14,7 @@ export const Scene = ({currentColor, currentTexture, upKeyPressed}) => {
     }
   })
   return (
-    <Stage intensity={1}>
+    <Stage adjustCamera intensity={1}>
       <mesh>
         <Submarine 
           map={colorMap}
