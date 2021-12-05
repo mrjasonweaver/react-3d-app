@@ -2,7 +2,9 @@
 
 An example react app using [create-react-app](https://github.com/facebook/create-react-app) and [@react-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction).
 
-I'm going to build out a react-based 3D experience for the browser using the basic [react-three-fiber example](https://codesandbox.io/s/rrppl0y8l4) as a starting point. The idea is to buid a submarine model in [Blender](https://www.blender.org/) and render it using three.js and allow the user to interact with it in some way. I'll start with a simple interface that allows changing the submarine color.
+This repo is a react-based 3D experience for the browser using the basic [react-three-fiber example](https://codesandbox.io/s/rrppl0y8l4) as a starting point. The idea is to take a submarine model from [Blender](https://www.blender.org/) and render it using three.js and allow the user to interact with it in some way. I started with a simple interface that allows changing the submarine color and texture and then added the ability to spin the propeller when pressing the arrow up key. [See the demo](https://mrjasonweaver.github.io/react-3d-app/) to play around with it in its current state.
+
+![3D Submarine](./3d-sub.gif)
 
 
 # Bundler Information
