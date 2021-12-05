@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-3d-app/static/css/main.cbb4594b.chunk.css",
-    "main.js": "/react-3d-app/static/js/main.4607f4f2.chunk.js",
-    "main.js.map": "/react-3d-app/static/js/main.4607f4f2.chunk.js.map",
+    "main.css": "/react-3d-app/static/css/main.2754f636.chunk.css",
+    "main.js": "/react-3d-app/static/js/main.479db845.chunk.js",
+    "main.js.map": "/react-3d-app/static/js/main.479db845.chunk.js.map",
     "runtime-main.js": "/react-3d-app/static/js/runtime-main.e8fdf173.js",
     "runtime-main.js.map": "/react-3d-app/static/js/runtime-main.e8fdf173.js.map",
-    "static/js/2.e15834af.chunk.js": "/react-3d-app/static/js/2.e15834af.chunk.js",
-    "static/js/2.e15834af.chunk.js.map": "/react-3d-app/static/js/2.e15834af.chunk.js.map",
+    "static/js/2.041c3f36.chunk.js": "/react-3d-app/static/js/2.041c3f36.chunk.js",
+    "static/js/2.041c3f36.chunk.js.map": "/react-3d-app/static/js/2.041c3f36.chunk.js.map",
     "static/js/3.13c90dfd.chunk.js": "/react-3d-app/static/js/3.13c90dfd.chunk.js",
     "static/js/3.13c90dfd.chunk.js.map": "/react-3d-app/static/js/3.13c90dfd.chunk.js.map",
     "index.html": "/react-3d-app/index.html",
-    "static/css/main.cbb4594b.chunk.css.map": "/react-3d-app/static/css/main.cbb4594b.chunk.css.map",
-    "static/js/2.e15834af.chunk.js.LICENSE.txt": "/react-3d-app/static/js/2.e15834af.chunk.js.LICENSE.txt",
+    "static/css/main.2754f636.chunk.css.map": "/react-3d-app/static/css/main.2754f636.chunk.css.map",
+    "static/js/2.041c3f36.chunk.js.LICENSE.txt": "/react-3d-app/static/js/2.041c3f36.chunk.js.LICENSE.txt",
     "static/media/Metal021_1K_Color.a20af683.jpg": "/react-3d-app/static/media/Metal021_1K_Color.a20af683.jpg",
     "static/media/Metal021_1K_Metalness.e2e8c24c.jpg": "/react-3d-app/static/media/Metal021_1K_Metalness.e2e8c24c.jpg",
     "static/media/Metal021_1K_NormalGL.d33c2557.jpg": "/react-3d-app/static/media/Metal021_1K_NormalGL.d33c2557.jpg",
@@ -23,14 +23,13 @@
     "static/media/Metal040_1K_Color.08dc88c1.jpg": "/react-3d-app/static/media/Metal040_1K_Color.08dc88c1.jpg",
     "static/media/Metal040_1K_NormalGL.1147ca52.jpg": "/react-3d-app/static/media/Metal040_1K_NormalGL.1147ca52.jpg",
     "static/media/Metal040_1K_Roughness.84bbb1b4.jpg": "/react-3d-app/static/media/Metal040_1K_Roughness.84bbb1b4.jpg",
-    "static/media/index.css": "/react-3d-app/static/media/smooth.29324b61.png",
     "static/media/propeller.1fd2fc4c.gltf": "/react-3d-app/static/media/propeller.1fd2fc4c.gltf",
     "static/media/submarine-without-propeller.d3a8d837.gltf": "/react-3d-app/static/media/submarine-without-propeller.d3a8d837.gltf"
   },
   "entrypoints": [
     "static/js/runtime-main.e8fdf173.js",
-    "static/js/2.e15834af.chunk.js",
-    "static/css/main.cbb4594b.chunk.css",
-    "static/js/main.4607f4f2.chunk.js"
+    "static/js/2.041c3f36.chunk.js",
+    "static/css/main.2754f636.chunk.css",
+    "static/js/main.479db845.chunk.js"
   ]
 }
